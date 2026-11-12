@@ -6,13 +6,13 @@ Dữ liệu: 12 ảnh người COCO val2017 (Lin et al., 2014) và 8 ảnh chân
 
 ## 0. Thông tin học viên
 
-- Họ tên:
-- MSSV:
-- Email:
+- Họ tên: Nguyễn Đức Cường
+- MSSV: 2A202603040
+- Email: 
 - Link repository:
 - Phiên bản CVAT (Help → About):
-- Máy: hệ điều hành ___ · RAM ___ GB · chạy CVAT chế độ đầy đủ / lite
-- Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): có / không
+- Máy: hệ điều hành Win· RAM 16 GB · chạy CVAT chế độ đầy đủ 
+- Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): có / 
 - Giờ bắt đầu:
 - Giờ kết thúc:
 
@@ -20,14 +20,14 @@ Dữ liệu: 12 ảnh người COCO val2017 (Lin et al., 2014) và 8 ảnh chân
 
 | Label | Kiểu | Số điểm | Tên điểm đúng bảng của lab? | Đúng thứ tự? | Số cạnh |
 |---|---|---:|---|---|---:|
-| `person` | | | | | |
-| `face` | | | | | |
+| `person` |Skeleton |17 | | | |
+| `face` |Skeleton | 17| | | |
 
 Mẫu `person` dựng theo người quay mặt về camera (các điểm `left_*` nằm bên phải khung mẫu)? Có / Không
 
-Cách đổi cờ `occluded` / `outside` cho **một điểm** trên phiên bản CVAT này (một câu):
+Cách đổi cờ `occluded` / `outside` cho **một điểm** trên phiên bản CVAT này (một câu): Ctrl + Q hoac Ctrl + O
 
-...
+
 
 ## 2. Số lượng đã gán và thời gian (CP1, CP2)
 
@@ -40,11 +40,10 @@ Cách đổi cờ `occluded` / `outside` cho **một điểm** trên phiên bả
 | `crowd` | 1 | | | | |
 | `faces` | 8 | | — | | |
 
-- Số ảnh người đã xong ở mốc phút 105: ___ / 10
+- Số ảnh người đã xong ở mốc phút 105: 10 / 10
 - Thời gian thực tế (phút): CP1 ___ · CP2 ___ · CP3 ___
 - Ảnh tốn thời gian nhất là ảnh nào, vì sao?
 
-...
 
 ## 3. Bảng ca khó (CP1, CP2)
 
@@ -64,9 +63,9 @@ Mã lỗi dùng đúng một trong: `lr_swap`, `vis_flag`, `position`, `missing`
 
 | Ảnh | Người / mặt | Điểm | Mã lỗi | Ghi chú | Đã sửa? |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+000000522889.jpg| |#1 | knee, ankle| | Cảnh báo: cặp knee, ankle nằm ngược phía| |
+|000000455536.jpg |#1 |wrist | |Cảnh báo: cặp wrist nằm ngược phía | |
+|000000188804.jpg |#1 |ankle | |Cảnh báo: cặp ankle nằm ngược phía | |
 | | | | | | |
 | | | | | | |
 | | | | | | |
@@ -81,7 +80,6 @@ Tổng hợp số lỗi theo mã:
 
 Điểm còn phân vân giữa `v = 1` và `v = 0` (ghi cả hai lựa chọn và lý do chọn):
 
-...
 
 ## 5. Kiểm file xuất và kết quả tự kiểm (CP4)
 
@@ -89,11 +87,11 @@ Tự kiểm tay trong file JSON:
 
 | File | Người / mặt kiểm (ảnh, thứ tự) | Số phần tử `keypoints` | Điểm `outside` ra `v = 0`, `occluded` ra `v = 1`? | `num_keypoints` khớp? |
 |---|---|---:|---|---|
-| `HoVaTen_persons.zip` | | | | |
-| `HoVaTen_persons.zip` | | | | |
-| `HoVaTen_faces.zip` | | | | |
+| `NguyenDucCuong_persons.zip` | |51 | | |
+| `NguyenDucCuong_persons.zip` | | 51| | |
+| `NguyenDucCuong_faces.zip` | |39 | | |
 
-Sau khi xuất, CVAT ghi `occluded` thành `v = ___` và `outside` thành `v = ___`. Tọa độ của điểm `outside` trong file là `0, 0` hay tọa độ cũ? ___
+Sau khi xuất, CVAT ghi `occluded` thành `v = 1` và `outside` thành `v = 0`. Tọa độ của điểm `outside` trong file là `0, 0` hay tọa độ cũ? toa do cu
 
 Hai job đã chuyển sang completed trên CVAT? Có / Không
 
