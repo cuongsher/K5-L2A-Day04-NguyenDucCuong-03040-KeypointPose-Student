@@ -8,8 +8,8 @@ Dữ liệu: 12 ảnh người COCO val2017 (Lin et al., 2014) và 8 ảnh chân
 
 - Họ tên: Nguyễn Đức Cường
 - MSSV: 2A202603040
-- Email: 
-- Link repository:
+- Email: cuongsher@gmail.com
+- Link repository: https://github.com/cuongsher/K5-L2A-Day04-NguyenDucCuong-03040-KeypointPose-Student.git
 - Phiên bản CVAT (Help → About):
 - Máy: hệ điều hành Win· RAM 16 GB · chạy CVAT chế độ đầy đủ 
 - Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): có / 
@@ -33,12 +33,12 @@ Cách đổi cờ `occluded` / `outside` cho **một điểm** trên phiên bả
 
 | Nhóm ảnh | Số ảnh | Số skeleton đã gán | Số người dưới 60 px (không gán) | Số poster / gương / màn hình bỏ qua | Thời gian (phút) |
 |---|---:|---:|---:|---:|---:|
-| `easy` | 5 | | | | |
-| `occluded` | 3 | | | | |
-| `back` | 2 | | | | |
-| `small` | 1 | | | | |
-| `crowd` | 1 | | | | |
-| `faces` | 8 | | — | | |
+| `easy` | 5 |5 | |0 | |
+| `occluded` | 3 |3 | |0 | |
+| `back` | 2 | 1| |0 | |
+| `small` | 1 | 1| |0 | |
+| `crowd` | 1 |1 | | 0| |
+| `faces` | 8 |8 | — |0 | |
 
 - Số ảnh người đã xong ở mốc phút 105: 10 / 10
 - Thời gian thực tế (phút): CP1 ___ · CP2 ___ · CP3 ___
@@ -63,7 +63,7 @@ Mã lỗi dùng đúng một trong: `lr_swap`, `vis_flag`, `position`, `missing`
 
 | Ảnh | Người / mặt | Điểm | Mã lỗi | Ghi chú | Đã sửa? |
 |---|---|---|---|---|---|
-000000522889.jpg| |#1 | knee, ankle| | Cảnh báo: cặp knee, ankle nằm ngược phía| |
+000000522889.jpg|#1 |knee, ankle| |Cảnh báo: cặp knee, ankle nằm ngược phía | | 
 |000000455536.jpg |#1 |wrist | |Cảnh báo: cặp wrist nằm ngược phía | |
 |000000188804.jpg |#1 |ankle | |Cảnh báo: cặp ankle nằm ngược phía | |
 | | | | | | |
