@@ -38,6 +38,28 @@
    "task_id": 9,
    "job_id": 8,
    "task_name": "faces-NguyenDucCuong"
+  },
+  "persons-extra": {
+   "task_id": 10,
+   "job_id": 9,
+   "task_name": "persons-extra-NguyenDucCuong"
+  },
+  "faces-extra": {
+   "task_id": 11,
+   "job_id": 10,
+   "task_name": "faces-extra-NguyenDucCuong"
   }
- }
+ },
+ "persons_extra": [
+  "000000073537.jpg",
+  "000000213506.jpg",
+  "000000373426.jpg"
+ ],
+ "faces_extra": [
+  "face_274219.jpg",
+  "face_300200.jpg",
+  "face_317330.jpg",
+  "face_379585.jpg",
+  "face_494518.jpg"
+ ]
 }

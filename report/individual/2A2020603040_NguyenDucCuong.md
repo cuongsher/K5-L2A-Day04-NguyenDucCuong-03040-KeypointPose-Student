@@ -93,13 +93,26 @@ Tự kiểm tay trong file JSON:
 
 Sau khi xuất, CVAT ghi `occluded` thành `v = 1` và `outside` thành `v = 0`. Tọa độ của điểm `outside` trong file là `0, 0` hay tọa độ cũ? toa do cu
 
-Hai job đã chuyển sang completed trên CVAT? Có / Không
+Hai job đã chuyển sang completed trên CVAT? Có 
 
 Dán phần **TÓM TẮT** in ra từ `src/check_submission.py`:
 
-```text
-(dán ở đây)
-```
+=== src\exports\NguyenDucCuong_faces.zip (label `face`) ===
+
+----- TÓM TẮT (dán vào báo cáo mục 5) -----
+- File person: NguyenDucCuong_persons.zip
+  Số ảnh: 12 · số skeleton `person`: 19 · mỗi annotation 51 số
+  Skeleton theo ảnh: 000000054909=2, 000000103970=1, 000000106051=2, 000000147780=2, 000000175703=1, 000000188804=2, 000000194027=1, 000000210604=2, 000000261732=1, 000000302102=2, 000000455536=1, 000000522889=2
+  Cờ v: v=2 255 (79%) · v=1 27 (8%) · v=0 41 (13%)
+  num_keypoints trung bình: 14.8
+- File face: NguyenDucCuong_faces.zip
+  Số ảnh: 8 · số skeleton `face`: 8 · mỗi annotation 39 số
+  Skeleton theo ảnh: face_137371=1, face_147624=1, face_175798=1, face_249336=1, face_255797=1, face_261458=1, face_380639=1, face_415073=1
+  Cờ v: v=2 96 (92%) · v=1 8 (8%) · v=0 0 (0%)
+  num_keypoints trung bình: 13.0
+- Ghi chú: 41 điểm v = 0 vẫn mang tọa độ cũ (CVAT 2.x xuất như vậy; chuẩn COCO ghi 0, 0). Không phải lỗi: điểm v = 0 bị bỏ quakhi huấn luyện và khi chấm.
+- Số [LỖI]: 0 · số [CẢNH BÁO]: 3
+Kết quả: ĐẠT (đọc lại từng cảnh báo ở trên)
 
 Các `[CẢNH BÁO]` còn giữ nguyên và lý do:
 
@@ -133,11 +146,13 @@ Nguồn ảnh: COCO val2017 / Wikimedia Commons.
 
 2. Một quy tắc bạn đề xuất thêm vào guideline (kèm ảnh ví dụ nếu có):
 
-   ...
+   Quy tắc đề xuất: Khi tay/chân bắt chéo thật, vẫn gán `left_*`/`right_*` theo bên trái/phải của cơ thể người đó, không theo vị trí trên ảnh. Guideline nên thêm một ảnh ví dụ chân bắt chéo, ghi rõ cặp ankle nằm ngược phía vẫn là đúng.
+
 
 3. Nhãn của bạn đi vào model ở đâu? Chọn một lỗi bạn đã sửa và nói nó sẽ làm model học sai thế nào (heatmap, trọng số trong loss, hay bước lật ảnh):
 
-   ...
+    Nhãn đi vào model ở heatmap, loss và bước lật ảnh. Nếu đổi nhầm `left_ankle` và `right_ankle` (`lr_swap`): heatmap của kênh `left_ankle` được học ở vị trí chân phải, nên model không phân biệt được hai chân. Loss phạt cả hai kênh dù dự đoán vị trí đúng. Khi lật ngang ảnh để tăng cường dữ liệu, model hoán đổi kênh theo `flip_pairs`, nên nhãn nhầm làm lỗi đổi phía bị nhân đôi.
+
 
 ## 8. Khó khăn và lỗi kỹ thuật
 
